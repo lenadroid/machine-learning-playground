@@ -82,6 +82,7 @@
     <Compile Include="DesicionTrees.fs" />
     <Compile Include="BikeRentalDemand.fs" />
     <Compile Include="PartialLeastSquaresAnalysis.fs" />
+    <Compile Include="Mushrooms.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <None Include="packages.config" />

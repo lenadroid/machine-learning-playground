@@ -5,7 +5,7 @@ open Accord.Statistics.Models.Regression
 open Accord.Statistics.Models.Regression.Fitting
 
 let logisticRegression () = 
-    // Port of Accord.NET C# sample of logistic regression
+    // Port of Accord.NET F# sample of logistic regression
     // Suppose we have the following data about some patients.
     // The first variable is continuous and represent patient
     // age. The second variable is dichotomic and give whether

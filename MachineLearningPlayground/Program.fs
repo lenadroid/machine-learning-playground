@@ -4,6 +4,7 @@ open DesicionTrees
 open LogisticRegression
 open BikeRentalDemand
 open PartialLeastSquaresAnalysis
+open Mushrooms
 open System.Data
 open Accord.IO
 open Accord.MachineLearning.DecisionTrees
@@ -21,5 +22,6 @@ let main argv =
     logisticRegression()
     bikeDemand()
     partialLeastSquaresAnalysis()
+    mayIEatAMushroom()
     printfn "%A" argv
     0 // return an integer exit code

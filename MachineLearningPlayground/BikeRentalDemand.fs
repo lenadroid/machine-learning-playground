@@ -9,7 +9,7 @@ open FSharp.Data
 // instant,dteday,season,yr,mnth,holiday,weekday,workingday,weathersit,temp,atemp,hum,windspeed,casual,registered,cnt
 
 let getBikeData () = 
-    let bikes = CsvFile.Load("path\to\BikeSharingDataset\day.csv").Cache()
+    let bikes = CsvFile.Load(__SOURCE_DIRECTORY__ + "\\BikeSharingDataset\\day.csv").Cache()
     let inputData = bikes.Rows 
                     |> Seq.map (fun x ->  
                                     printfn "%A,  %A - %A" (x.GetColumn "temp") (x.GetColumn "workingday") (x.GetColumn "cnt") 
