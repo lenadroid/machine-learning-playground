@@ -50,6 +50,10 @@
       <HintPath>..\packages\Accord.Math.2.15.0\lib\net45\Accord.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Accord.Neuro">
+      <HintPath>..\packages\Accord.Neuro.2.15.0\lib\net45\Accord.Neuro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Accord.Statistics">
       <HintPath>..\packages\Accord.Statistics.2.15.0\lib\net45\Accord.Statistics.dll</HintPath>
       <Private>True</Private>
@@ -58,8 +62,20 @@
       <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AForge.Genetic">
+      <HintPath>..\packages\AForge.Genetic.2.2.5\lib\AForge.Genetic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AForge.Math">
       <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Neuro">
+      <HintPath>..\packages\AForge.Neuro.2.2.5\lib\AForge.Neuro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Charting">
+      <HintPath>..\packages\FSharp.Charting.0.90.12\lib\net40\FSharp.Charting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Data">
@@ -83,9 +99,15 @@
     <Compile Include="BikeRentalDemand.fs" />
     <Compile Include="PartialLeastSquaresAnalysis.fs" />
     <Compile Include="Mushrooms.fs" />
+    <Compile Include="Poker.fs" />
+    <Compile Include="Wine.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Interactive.fsx" />
+    <None Include="NeuralNetworks.fsx" />
+    <None Include="NnPoker.fsx" />
+    <None Include="KMeans.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

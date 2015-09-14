@@ -3,7 +3,7 @@
 open Accord
 open Accord.Statistics.Analysis
 
-// Port of Accord.NET F# example
+// Accord.NET F# example
 
 // Following the small example by Hervé Abdi (Hervé Abdi, Partial Least Square Regression),
 // we will create a simple example where the goal is to predict the subjective evaluation of
