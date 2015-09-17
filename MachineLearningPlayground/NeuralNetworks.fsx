@@ -64,14 +64,6 @@ let getWineData (path) =
     let outputs = Accord.Statistics.Tools.Expand(classData, -1.0, +1.0)
     (normalizedData, classData, outputs, minimums, maximums)
 
-let zipWithIndex list = Seq.zip list (seq {
-                                             let i = ref 0
-                                             while true do
-                                                 let n = !i
-                                                 i := !i + 1
-                                                 yield n
-                                           })
-
 let testAndCheckAccuracy (network: ActivationNetwork) = 
     let input, classes, outputs, minimums, maximums = getWineData testData
 
@@ -89,7 +81,7 @@ let testAndCheckAccuracy (network: ActivationNetwork) =
 let predictWineCategories () = 
     let input, classes, outputs, minimums, maximums = getWineData trainData
     let activationFunction = BipolarSigmoidFunction()
-    let network = new ActivationNetwork(activationFunction, 13, 79, 3)
+    let network = new ActivationNetwork(activationFunction, 13, 85, 3)
 
     // Randomly initialize the network
     (new NguyenWidrow(network)).Randomize()

@@ -12,23 +12,23 @@ let logisticRegression () =
     // they smoke or not (This is completely fictional data).
 
     let input = [|
-                    [| 55.0; 0.0 |];
-                    [| 28.0; 0.0 |];
-                    [| 65.0; 1.0 |];
-                    [| 46.0; 0.0 |];
-                    [| 86.0; 1.0 |];
-                    [| 56.0; 1.0 |];
-                    [| 85.0; 0.0 |];
-                    [| 33.0; 0.0 |];
-                    [| 21.0; 1.0 |];
-                    [| 42.0; 1.0 |];
+                    [| 55.; 0. |]; // will output 0
+                    [| 28.; 0. |]; // will output 0
+                    [| 65.; 1. |]; // will output 0
+                    [| 46.; 0. |]; // will output 1
+                    [| 86.; 1. |]; // will output 1
+                    [| 56.; 1. |]; // will output 1
+                    [| 85.; 0. |]; // will output 0
+                    [| 33.; 0. |]; // will output 0
+                    [| 21.; 1. |]; // will output 0
+                    [| 42.; 1. |]; // will output 1
                 |]
 
     // We also know if they have had lung cancer or not, and 
     // we would like to know whether smoking has any connection
     // with lung cancer (This is completely fictional data).
 
-    let output = [|0.0; 0.0; 0.0; 1.0; 1.0; 1.0; 0.0; 0.0; 0.0; 1.0|]
+    let output = [|0.; 0.; 0.; 1.; 1.; 1.; 0.; 0.; 0.; 1.|]
 
     // To verify this hypothesis, we are going to create a logistic
     // regression model for those two inputs (age and smoking).
