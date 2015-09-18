@@ -81,8 +81,7 @@ let testAndCheckAccuracy (network: ActivationNetwork) =
 let predictWineCategories () = 
     let input, classes, outputs, minimums, maximums = getWineData trainData
     let activationFunction = BipolarSigmoidFunction()
-    let network = new ActivationNetwork(activationFunction, 13, 85, 3)
-
+    let network = new ActivationNetwork(activationFunction, 13, 79, 3)
     // Randomly initialize the network
     (new NguyenWidrow(network)).Randomize()
 
@@ -93,9 +92,9 @@ let predictWineCategories () =
         match teacher.RunEpoch(input, outputs) with 
         | x when x > 0.01 -> printfn "%A" x; teach ()
         | _ -> ()
-
-    teach()
     
+        teach()
+
     // After the algorithm has been created, we can use it:
 
     let class1 = [|13.2;1.78;2.14;11.2;100.0;2.65;2.76;0.26;1.28;4.38;1.05;3.4;1050.0|]
@@ -103,13 +102,11 @@ let predictWineCategories () =
     let class3 = [|13.27;4.28;2.26;20.0;120.0;1.59;0.69;0.43;1.35;10.2;0.59;1.56;835.0|]
 
     let norm = class1 |> normalize minimums maximums
-
     let outputLayer = network.Compute(norm)
-
     let predictedClass = getPredictedClassFrom outputLayer 1
 
     let accuracy = testAndCheckAccuracy network
-    printfn "Accuracy in results on poker hand prediction: %A percents" accuracy
+    printfn "Accuracy in results on wine classification: %A percents" accuracy
 
     System.Console.ReadLine() |> ignore
     ()

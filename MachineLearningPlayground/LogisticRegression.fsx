@@ -7,6 +7,9 @@ open Accord
 open Accord.Statistics.Models.Regression
 open Accord.Statistics.Models.Regression.Fitting
 
+
+let regression = new LogisticRegression 2
+
 let logisticRegression () = 
     // The first variable is a person's age. 
     // The second variable gives whether they smoke or not
