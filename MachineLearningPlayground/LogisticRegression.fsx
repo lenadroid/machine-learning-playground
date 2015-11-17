@@ -1,14 +1,13 @@
-﻿#r @"D:\Программирование\github\machine-learning-playground\packages\Accord.MachineLearning.2.15.0\lib\net45\Accord.MachineLearning.dll"
-#r @"D:\Программирование\github\machine-learning-playground\packages\Accord.Math.2.15.0\lib\net45\Accord.Math.dll"
-#r @"D:\Программирование\github\machine-learning-playground\packages\Accord.Statistics.2.15.0\lib\net45\Accord.Statistics.dll"
-#r @"D:\Программирование\github\machine-learning-playground\packages\Accord.2.15.0\lib\net45\Accord.dll"
+﻿#load "Utils.fsx"
 
+open System
 open Accord
+open Accord.Math
+open FSharp.Data
+open Accord.Statistics
+open Accord.MachineLearning
 open Accord.Statistics.Models.Regression
 open Accord.Statistics.Models.Regression.Fitting
-
-
-let regression = new LogisticRegression 2
 
 let logisticRegression () = 
     // The first variable is a person's age. 
@@ -48,7 +47,8 @@ let logisticRegression () =
 
     teach()
 
-    let computeOutput = regression.Compute([| 56.; 1. |])
-    printfn "Compute output %A" computeOutput
+    let computeOutput = regression.Compute([| 19.; 0. |])
+    printfn "High probability of lung cancer - %A" (computeOutput >= 0.5)
 
-    System.Console.ReadLine() |> ignore
+
+// What if we want to have more inputs?
