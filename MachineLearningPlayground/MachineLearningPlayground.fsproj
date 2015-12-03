@@ -55,20 +55,13 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <None Include="Utils.fsx" />
-    <Compile Include="LogisticRegression.fs" />
-    <Compile Include="DesicionTrees.fs" />
-    <Compile Include="BikeRentalDemand.fs" />
-    <Compile Include="PartialLeastSquaresAnalysis.fs" />
-    <Compile Include="Mushrooms.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="NeuralNetworks.fsx" />
-    <None Include="NnPoker.fsx" />
-    <None Include="KMeans.fsx" />
     <None Include="MultipleLinearRegression.fsx" />
     <None Include="LogisticRegression.fsx" />
     <None Include="MultinomialLogisticRegression.fsx" />
+    <None Include="KMeans.fsx" />
     <Content Include="Google.DataTable.Net.Wrapper.XML" />
   </ItemGroup>
   <ItemGroup>

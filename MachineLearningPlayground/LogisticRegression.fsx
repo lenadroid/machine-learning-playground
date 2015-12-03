@@ -39,6 +39,8 @@ let logisticRegression () =
     // Next, we are going to estimate this model
 
     let teacher = new IterativeReweightedLeastSquares(regression)
+    
+    // teaching until we are satisfied 
 
     let rec teach () : unit = 
         match teacher.Run(input, output) with 
@@ -46,6 +48,8 @@ let logisticRegression () =
         | _ -> ()
 
     teach()
+
+    // ready to use the model for predictions
 
     let computeOutput = regression.Compute([| 19.; 0. |])
     printfn "High probability of lung cancer - %A" (computeOutput >= 0.5)

@@ -101,7 +101,7 @@ let bikeDemand () =
                                    registered;
                                 |])
     
-    printfn "Predicting the demand on bike rentals = %A" y.[0]
+    printfn "Predicting the demand on bike rentals = %A" (y.[0] |> int)
 
     let thetas = regression.Coefficients
 

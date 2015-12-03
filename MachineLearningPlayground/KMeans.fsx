@@ -13,9 +13,11 @@ open XPlot.GoogleCharts
 
 let wb = WorldBankData.GetDataContext()
 
+wb.Countries.``United Kingdom``.Indicators.``Adjusted savings: gross savings (% of GNI)``.[2010]
+
 let data =
  [| for c in wb.Countries do
-    let birthRate = c.Indicators.``Birth rate, crude (per 1,000 people)``.[2010]
+    let birthRate = c.Indicators.``Birth rate, crude (per 1,000 people)``.[2013]
     let nationalIncome = c.Indicators.``Adjusted net national income (annual % growth)``.[2010]
     let savings = c.Indicators.``Adjusted net savings, including particulate emission damage (current US$)``.[2010]
     let educationExpenditure = c.Indicators.``Adjusted savings: education expenditure (current US$)``.[2010]
@@ -35,26 +37,12 @@ let data =
 let indicators = 
     data |> Array.map (fun (country, indicators) -> indicators)
 
-let kmeans = new KMeans 5
+let kmeans = new KMeans 4
 kmeans.Tolerance <- 1e-7
 
-let clusterColors = [|"green"; "blue"; "red"; "yellow"; "black"|]
+let clusterColors = [|"green"; "blue"; "red"; "yellow"|]
 
 let clusters = kmeans.Compute indicators
-
-let pointChart = 
-    Chart.Combine(
-        indicators 
-        |> Array.map (fun x -> x.[0], x.[1])
-        |> Array.mapi (fun i x -> (Chart.Point[((fst x), (snd x))] 
-                                  |> Chart.WithStyling(
-                                        Color = getColor (Array.get clusters i)))))
-let lineChart = 
-    Chart.Combine(
-        indicators 
-        |> Array.map (fun x -> x.[0], x.[1])
-        |> Array.mapi (fun i x -> (FSharp.Charting.Chart.Line[fst x; snd x] 
-                                  |> Chart.WithStyling(Color = getColor (Array.get clusters i)))))
 
 let mapsData = data |> Array.map (fun (country, _) -> country)
 
